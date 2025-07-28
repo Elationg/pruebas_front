@@ -1,0 +1,32 @@
+{
+  "entidades": ["Clientes", "Proveedores", "Artículos"],
+  "configuracion": ["Usuarios", "Perfiles"],
+  "seccionesSimples": ["Ventas", "Compras", "Finanzas"],
+  "rutas": {
+    "Clientes": "/clientes",
+    "Proveedores": "/proveedores",
+    "Artículos": "/articulos",
+    "Ventas": "/ventas",
+    "Compras": "/compras",
+    "Finanzas": "/finanzas",
+    "Usuarios": "/configuracion/usuarios",
+    "Perfiles": "/configuracion/perfiles"
+  },
+  "titulos": {
+    "Clientes": "Listado de Clientes",
+    "Proveedores": "Listado de Proveedores",
+    "Artículos": "Listado de Artículos",
+    "Ventas": "Ventas",
+    "Compras": "Compras",
+    "Finanzas": "Finanzas",
+    "Usuarios": "Listado de Usuarios",
+    "Perfiles": "Listado de Perfiles"
+  },
+  "botones": {
+    "Clientes": "Crear Cliente",
+    "Proveedores": "Crear Proveedor",
+    "Artículos": "Crear Artículo",
+    "Usuarios": "Crear Usuario",
+    "Perfiles": "Crear Perfil"
+  }
+}

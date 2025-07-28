@@ -1,0 +1,212 @@
+{
+  "sinSku": {
+    "exito": false,
+    "sku":"",
+    "descripcion": "Artículo 1",
+    "stock": 10,
+    "costo": 500,
+    "precio": 900,
+    "unidad": "Unidad",
+    "error": "El SKU es obligatorio."
+  },
+  "skuLargo < 255 char": {
+    "exito": false,
+    "sku": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "descripcion": "Artículo 2",
+    "stock": 10,
+    "costo": 500,
+    "precio": 900,
+    "unidad": "Unidad",
+    "error": "El SKU no puede tener más de 100 caracteres."
+  },
+  "skuLargo > 255 char": {
+    "exito": false,
+    "sku": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "descripcion": "Artículo 2.1",
+    "stock": 10,
+    "costo": 500,
+    "precio": 900,
+    "unidad": "Unidad",
+    "error": "El SKU no puede tener más de 100 caracteres."
+  },
+  "sinDescripcion": {
+    "exito": false,
+    "sku": "COD-PB-2025a",
+    "descripcion":"",
+    "stock": 10,
+    "costo": 500,
+    "precio": 900,
+    "unidad": "Unidad",
+    "error": "La descripción es obligatoria."
+  },
+  "descripcionLarga < 255 char": {
+    "exito": false,
+    "sku": "COD-PB-2025b",
+    "descripcion": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+    "stock": 10,
+    "costo": 500,
+    "precio": 900,
+    "unidad": "Unidad",
+    "error": "La descripción no puede tener más de 200 caracteres."
+  },
+  "descripcionLarga > 255 char": {
+    "exito": false,
+    "sku": "COD-PB-2025c",
+    "descripcion": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+    "stock": 10,
+    "costo": 500,
+    "precio": 900,
+    "unidad": "Unidad",
+    "error": "La descripción no puede tener más de 200 caracteres."
+  },
+  "sinAmbas": {
+    "exito": false,
+    "sku":"",
+    "descripcion":"",
+    "stock": 10,
+    "costo": 500,
+    "precio": 900,
+    "unidad": "Unidad",
+    "error": "El SKU y la descripción son obligatorios."
+  },
+  "stockNegativo": {
+    "exito": false,
+    "sku": "COD-PB-2025d",
+    "descripcion": "Artículo 3",
+    "stock": -5,
+    "costo": 500,
+    "precio": 900,
+    "unidad": "Unidad",
+    "error": "El stock no puede ser negativo."
+  },
+  "stockDecimal": {
+    "exito": false,
+    "sku": "COD-PB-2025e",
+    "descripcion": "Artículo 4",
+    "stock": 3.5,
+    "costo": 500,
+    "precio": 900,
+    "unidad": "Unidad",
+    "error": "El stock debe ser un número entero."
+  },
+  "stockValido": {
+    "exito": true,
+    "sku": "COD-A1-2025",
+    "descripcion": "Artículo 5",
+    "stock": 10,
+    "costo": 500,
+    "precio": 900,
+    "unidad": "Unidad",
+    "error": "stockValido"
+  },
+  "costoNegativo": {
+    "exito": false,
+    "sku": "COD-PB-2025f",
+    "descripcion": "Artículo 6",
+    "stock": 10,
+    "costo": -100,
+    "precio": 900,
+    "unidad": "Unidad",
+    "error": "El costo no puede ser negativo."
+  },
+  "costoDecimal": {
+    "exito": true,
+    "sku": "COD-A2-2025",
+    "descripcion": "Artículo 7",
+    "stock": 10,
+    "costo": 123.45,
+    "precio": 900,
+    "unidad": "Unidad",
+    "error": "costoDecimal"
+  },
+  "precioNegativo": {
+    "exito": false,
+    "sku": "COD-PB-2025g",
+    "descripcion": "Artículo 8",
+    "stock": 10,
+    "costo": 500,
+    "precio": -900,
+    "unidad": "Unidad",
+    "error": "El precio no puede ser negativo."
+  },
+  "precioDecimal": {
+    "exito": true,
+    "sku": "COD-A3-2025",
+    "descripcion": "Artículo 9",
+    "stock": 10,
+    "costo": 500,
+    "precio": 123.99,
+    "unidad": "Unidad",
+    "error": "precioDecimal"
+  },
+  "unidadSelecciona": {
+    "exito": false,
+    "sku": "COD-PB-2025h",
+    "descripcion": "Artículo 10",
+    "stock": 10,
+    "costo": 500,
+    "precio": 900,
+    "unidad": "Selecciona",
+    "error": "Debe seleccionar una unidad válida."
+  },
+  "unidadUnidad": {
+    "exito": true,
+    "sku": "COD-A4-2025",
+    "descripcion": "Artículo 11",
+    "stock": 10,
+    "costo": 500,
+    "precio": 900,
+    "unidad": "Unidad",
+    "error": "unidadUnidad"
+  },
+  "unidadCaja": {
+    "exito": true,
+    "sku": "COD-A5-2025",
+    "descripcion": "Artículo 12",
+    "stock": 10,
+    "costo": 500,
+    "precio": 900,
+    "unidad": "Caja",
+    "error": "unidadCaja"
+  },
+  "unidadKg": {
+    "exito": true,
+    "sku": "COD-A6-2025",
+    "descripcion": "Artículo 13",
+    "stock": 10,
+    "costo": 500,
+    "precio": 900,
+    "unidad": "Kg",
+    "error": "unidadKg"
+  },
+  "exitoCreacion": {
+    "exito": true,
+    "sku": "COD-A7-2025",
+    "descripcion": "Iphone 16",
+    "stock": 10,
+    "costo": 500,
+    "precio": 900,
+    "unidad": "Unidad",
+    "error": "éxito"
+  },
+  "duplicadoSku": {
+    "exito": false,
+    "sku": "COD-A7-2025",
+    "descripcion": "Iphone 16 Plus",
+    "stock": 5,
+    "costo": 400,
+    "precio": 800,
+    "unidad": "Caja",
+    "error": "Ya existe un artículo con este SKU."
+  },
+  "duplicadoDescripcion": {
+    "exito": false,
+    "sku": "COD-PB-2026",
+    "descripcion": "Iphone 16",
+    "stock": 8,
+    "costo": 450,
+    "precio": 850,
+    "unidad": "Kg",
+    "error": "Ya existe un artículo con esta descripción."
+  }
+}
