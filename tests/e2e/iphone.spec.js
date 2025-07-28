@@ -44,7 +44,7 @@ test('Flujo completo: crear, verificar, editar y eliminar artículo', async ({ p
   const stock = datosOriginales.stock;
   
 
-  // Paso 1: Crear artículo
+  // Crear Artículo con datos desde json "exitoCreación"
   await crearArticuloPage.completarFormulario(datosOriginales);
   await crearArticuloPage.guardar();
   await expect(alerta).toBeVisible();
@@ -52,7 +52,7 @@ test('Flujo completo: crear, verificar, editar y eliminar artículo', async ({ p
   console.log(`Articulo "${descripcion}" creado con éxito!`);
 
 
-  // Paso 2: Verificar en tabla
+  // Validar los datos ingresados con los datos mostrados en la tabla /artículos
   await page.goto('/articulos');
   await articulosPage.esperarTablaCargada();
   const index = await articulosPage.buscarFilaPorCampos([sku, descripcion,stock]);
@@ -66,11 +66,11 @@ test('Flujo completo: crear, verificar, editar y eliminar artículo', async ({ p
   console.log(`Entramos al detalle del artículo. URL: ${urlArticulo}`);
   
 
-  // Paso 3: Verificar en detalle
+  // Verificar que los datos son los mismos
   await detalleArticuloPage.validarCoincidenciasPorCampo(datos);
   console.log('Verificación en vista detalle correcta');
 
-  // Paso 4: Editar artículo
+  // Editar articulo desde detalle articulo - editar
   await page.getByRole('button', { name: 'Editar' }).click();
   await expect(page).toHaveURL(/\/editar$/);
   await editarArticuloPage.editarCampo('descripcion', datosEditados.descripcion);
@@ -78,14 +78,14 @@ test('Flujo completo: crear, verificar, editar y eliminar artículo', async ({ p
   await expect(alerta).toContainText('actualizado con éxito');
   console.log('Artículo editado');
 
-  // Paso 5: Verificar cambio en tabla
+  // Verificar los cambios en la tabla /articulos
   await page.goto('/articulos');
   await articulosPage.esperarTablaCargada();
   const { datos: datosEditadosTabla } = await articulosPage.obtenerDatosFilaComoObjeto(index);
   expect(datosEditadosTabla['Descripción']).toBe(datosEditados.descripcion);
   console.log('Cambio reflejado en tabla');
 
-  // Paso 6: Verificar cambio en detalle
+  // Verificar nuevmaente los cambios en detalle artículo
   const fila2 = await articulosPage.obtenerFila(index);
   await fila2.click();
   const detalleDatos = await detalleArticuloPage.obtenerDatosDetalle();
@@ -93,7 +93,7 @@ test('Flujo completo: crear, verificar, editar y eliminar artículo', async ({ p
   expect(campoDescripcion?.valor).toBe(datosEditados.descripcion);
   console.log('Cambio reflejado en detalle');
 
-  // Paso 7: Eliminar artículo
+  // Eliminar artículo creadogit 
   await page.goto('/articulos');
   await articulosPage.esperarTablaCargada();
   const filaEliminar = await articulosPage.obtenerFila(index);
