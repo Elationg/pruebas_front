@@ -17,21 +17,21 @@
   "Contraseña Vacía": {
     "email": "testeradl@test.com",
     "clave": "",
-    "mensaje": "fill out"
+    "mensaje": "Please fill out this field."
   },
   "Email sin @": {
     "email": "correo-mal-escrito",
     "clave": "algunaClave",
-    "mensaje": "include"
+    "mensaje": "include an '@'"
   },
   "Email sin dominio completo": {
     "email": "correo@",
     "clave": "algunaClave",
-    "mensaje": "following"
+    "mensaje": "following '@'"
   },
   "Email sin Top Level Domain (TLD)": {
     "email": "correo@malescrito",
     "clave": "algunaClave",
-    "mensaje": "TLD"
+    "mensaje": "include TLD"
   }
 }

@@ -17,11 +17,13 @@ test.describe('Pruebas de Login con usuarios desde JSON', () => {
 
   test('Login válido redirige a dashboard', async ({ page }) => {
     const { email, clave } = usuarios.valido;
+    const usuario = usuarios.valido.email;
     await login.inputEmail.fill(email);
     await login.inputClave.fill(clave);
     await login.botonIngresar.click();
 
     await expect(page).toHaveURL(/\/dashboard/);
+    console.log(`✅ ${usuario} redirigido a Dashboard con éxito!`)
   });
 
   for (const [key, user] of Object.entries(usuarios)) {
@@ -32,12 +34,12 @@ test.describe('Pruebas de Login con usuarios desde JSON', () => {
       await login.inputClave.fill(user.clave);
       await login.botonIngresar.click();
 
-      if (key === 'Contraseña vacía') {
-        const mensaje = await login.inputClave.evaluate(el => el.validationMessage);
-        expect(mensaje).toContain(user.mensaje);
-      } else if (key.startsWith('Email')) {
-        const mensaje = await login.inputEmail.evaluate(el => el.validationMessage);
-        expect(mensaje).toMatch(user.mensaje);
+      if (key === 'Contraseña Vacía') {
+        await login.compararMensajesValidacion(login.inputClave, user.mensaje, 'clave');
+      }
+      else if (key.startsWith('Email')) {
+        await login.compararMensajesValidacion(login.inputEmail, user.mensaje, 'email');
+        
       } else {
         // Mensaje Toastify
         await login.expectToastMessage(user.mensaje);
