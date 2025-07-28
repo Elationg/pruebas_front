@@ -41,12 +41,6 @@ jobs:
         path: playwright-report/
         retention-days: 30
 
-    - name: Subir URL como artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: github-pages-url
-        path: 
-
     - name: Subir reporte a GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
