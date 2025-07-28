@@ -97,10 +97,8 @@ test.describe('Pruebas de creación, edición y eliminación de artículos', () 
         
         // Eliminar Artículo
         const indexEliminar = await articulosPage.buscarFilaPorCampos([sku, descripcionEditada,stock]);
-        console.log(indexEliminar);
         if (indexEliminar !== -1) {
           const filaEliminar = await articulosPage.obtenerFila(indexEliminar);
-          console.log(filaEliminar);
           await filaEliminar.locator('.text-red-600').click();
           await expect(alerta).toHaveText(`Artículo eliminado con éxito.`);
           console.log(`✅ Articulo creado y eliminado con éxito: ${articulo.sku}`);
@@ -172,12 +170,10 @@ test.describe('Pruebas de creación, edición y eliminación de artículos', () 
          
             // Eliminar artículo
             const indexEliminar = await articulosPage.buscarFilaPorCampos([sku, descripcionEditada,stock]);
-            console.log(indexEliminar);
 
             //Se crean excepciones porque hay casos en que "alerta" no se muestra.
             if (indexEliminar !== -1) {
               const filaEliminar = await articulosPage.obtenerFila(indexEliminar);
-              console.log(filaEliminar);
               await filaEliminar.locator('.text-red-600').click();
 
               let validado = false;
@@ -190,7 +186,7 @@ test.describe('Pruebas de creación, edición y eliminación de artículos', () 
                 validado = true;
                 console.log(`✅ Artículo INVALIDO creado y eliminado con éxito (alerta): ${articulo.sku}`);
               } catch {
-                console.warn('⚠️ Alerta no detectada, intentando validación en detalle...');
+                console.warn('Alerta no detectada, intentando validación en detalle...');
                 
                 try {
                   // Caso 2: Ir directamente al detalle del artículo con la URL capturada
@@ -201,7 +197,7 @@ test.describe('Pruebas de creación, edición y eliminación de artículos', () 
                   validado = true;
                   console.log(`✅ Artículo INVALIDO creado y eliminado con éxito (detalle): ${articulo.sku}`);
                 } catch {
-                  console.warn('⚠️ No se encontró el error en detalle. Verificando fila en tabla...');
+                  console.warn('No se encontró el error en detalle. Verificando fila en tabla...');
 
                   try {
                     // Caso 3: Validar si la fila en la tabla tiene datos distintos
@@ -221,15 +217,15 @@ test.describe('Pruebas de creación, edición y eliminación de artículos', () 
                         validado = true;
                        // Si no se logra validar la eliminación por ninguno de los 3 casos
                       } else {
-                        console.error('❌ Artículo aún aparece con datos coincidentes en tabla. No fue eliminado.');
+                        console.error('Artículo aún aparece con datos coincidentes en tabla. No fue eliminado.');
                         throw new Error(`Artículo inválido aún presente en tabla: ${articulo.sku}`);
                       }
                     } else {
-                      console.log(`✅ Artículo inválido no aparece en la tabla (considerado eliminado): ${articulo.sku}`);
+                      console.log(`Artículo inválido no aparece en la tabla (considerado eliminado): ${articulo.sku}`);
                       validado = true;
                     }
                   } catch (err) {
-                    console.error('❌ Fallo en la tercera validación (comparación con fila):', err);
+                    console.error('Fallo en la tercera validación (comparación con fila):', err);
                     throw err;
                   }
                 }
@@ -237,15 +233,14 @@ test.describe('Pruebas de creación, edición y eliminación de artículos', () 
 
               // Si ninguna validación funcionó
               if (!validado) {
-                throw new Error(`❌ No se pudo confirmar la eliminación del artículo inválido: ${articulo.sku}`);
+                throw new Error(`No se pudo confirmar la eliminación del artículo inválido: ${articulo.sku}`);
               }
             }
           }
           else {
-            console.log(`El artículo "${articulo.sku}" NO FUE CREADO`);
             console.warn(`✅ El artículo inválido no fue creado (como se esperaba).`);
               if (errorNoEncontrado) {
-                throw new Error(`🚨 No se encontró mensaje de error esperado en "${prueba.nombre}"`);
+                throw new Error(`❌ No se encontró mensaje de error esperado en "${prueba.nombre}"`);
               }
               return;
           }

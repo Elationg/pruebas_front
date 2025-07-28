@@ -28,7 +28,7 @@ test('Validar que los datos del artículo coincidan entre tabla y detalle', asyn
 
   // Extraer datos y fila para click
   const { fila, datos } = await articulosPage.obtenerDatosFilaComoObjeto(0);
-  console.log('🔍 Datos extraídos de la tabla:', datos); 
+  console.log('Datos extraídos de la tabla:', datos); 
   // Clic en fila para navegar a detalle
   await fila.click();
 

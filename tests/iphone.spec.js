@@ -63,12 +63,12 @@ test('Flujo completo: crear, verificar, editar y eliminar artículo', async ({ p
   await expect(page).toHaveURL(/\/articulos\/\d+$/);
 
   const urlArticulo = page.url();
-  console.log(`✅ Entramos al detalle del artículo. URL: ${urlArticulo}`);
+  console.log(`Entramos al detalle del artículo. URL: ${urlArticulo}`);
   
 
   // Paso 3: Verificar en detalle
   await detalleArticuloPage.validarCoincidenciasPorCampo(datos);
-  console.log('✅ Verificación en vista detalle correcta');
+  console.log('Verificación en vista detalle correcta');
 
   // Paso 4: Editar artículo
   await page.getByRole('button', { name: 'Editar' }).click();
@@ -76,14 +76,14 @@ test('Flujo completo: crear, verificar, editar y eliminar artículo', async ({ p
   await editarArticuloPage.editarCampo('descripcion', datosEditados.descripcion);
   await editarArticuloPage.guardarCambios();
   await expect(alerta).toContainText('actualizado con éxito');
-  console.log('✅ Artículo editado');
+  console.log('Artículo editado');
 
   // Paso 5: Verificar cambio en tabla
   await page.goto('/articulos');
   await articulosPage.esperarTablaCargada();
   const { datos: datosEditadosTabla } = await articulosPage.obtenerDatosFilaComoObjeto(index);
   expect(datosEditadosTabla['Descripción']).toBe(datosEditados.descripcion);
-  console.log('✅ Cambio reflejado en tabla');
+  console.log('Cambio reflejado en tabla');
 
   // Paso 6: Verificar cambio en detalle
   const fila2 = await articulosPage.obtenerFila(index);
@@ -91,7 +91,7 @@ test('Flujo completo: crear, verificar, editar y eliminar artículo', async ({ p
   const detalleDatos = await detalleArticuloPage.obtenerDatosDetalle();
   const campoDescripcion = detalleDatos.find(item => item.titulo === 'Descripción');
   expect(campoDescripcion?.valor).toBe(datosEditados.descripcion);
-  console.log('✅ Cambio reflejado en detalle');
+  console.log('Cambio reflejado en detalle');
 
   // Paso 7: Eliminar artículo
   await page.goto('/articulos');
@@ -99,5 +99,5 @@ test('Flujo completo: crear, verificar, editar y eliminar artículo', async ({ p
   const filaEliminar = await articulosPage.obtenerFila(index);
   await filaEliminar.locator('.text-red-600').click();
   await expect(alerta).toContainText('eliminado con éxito');
-  console.log(`🗑️ Artículo eliminado: ${sku}`);
+  console.log(`Artículo eliminado: ${sku}`);
 });

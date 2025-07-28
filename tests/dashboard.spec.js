@@ -58,7 +58,6 @@ for (const item of [...dashboardData.entidades, ...dashboardData.seccionesSimple
 
     // Si hubo errores, falla el test con el resumen
     if (errores.length > 0) {
-      console.error(`\nResumen de errores en ${item}:\n${errores.join('\n')}`);
       throw new Error(`Fallaron validaciones para ${item}:\n${errores.join('\n')}`);
     }
   });

@@ -35,7 +35,6 @@ export class CrearArticuloPage {
 
   async guardar() {
     await this.btnGuardar.click();
-    console.log("🖱️ Se hizo clic en el botón 'Guardar cambios'");
   }
 
   async cancelar() {

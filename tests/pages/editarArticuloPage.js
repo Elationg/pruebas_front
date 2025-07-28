@@ -49,7 +49,7 @@ export class EditarArticuloPage {
       default:
         throw new Error(`⚠️ Campo no válido: "${campo}"`);
     }
-    console.log(`✏️ Campo "${campo}" editado con valor "${valor}"`);
+    console.log(`Campo "${campo}" editado con valor "${valor}"`);
   }
 
   /**
@@ -57,7 +57,6 @@ export class EditarArticuloPage {
    */
   async guardarCambios() {
     await this.btnGuardar.click();
-    console.log('💾 Cambios guardados');
   }
 
   // Forma 1: desde detalle
