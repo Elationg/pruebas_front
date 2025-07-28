@@ -1,0 +1,78 @@
+## Proyecto de Pruebas Automatizadas - Playwright, CI/CD y Backend API
+
+Este repositorio contiene el conjunto de pruebas automatizadas desarrolladas para validar funcionalidades críticas de una aplicación web y su backend, como parte de una actividad práctica de pruebas end-to-end (E2E).
+
+## Tecnologías Utilizadas
+
+- **Playwright**: Framework principal para la automatización de pruebas E2E en el frontend.
+- **Cucumber + Gherkin**: Para estructurar las pruebas E2E con enfoque BDD (Behavior Driven Development).
+- **HTML Reporter de Playwright**: Utilizado para generar reportes visuales de las ejecuciones de prueba.
+- **GitHub Actions**: Para la ejecución automatizada de pruebas en cada push mediante CI/CD.
+- **GitHub Pages**: Para publicar los reportes HTML generados desde las pruebas.
+- **Supertest + Jest**: Para pruebas del backend, enfocadas en la validación de endpoints protegidos y autenticados.
+
+---
+
+## Historias de Usuario Probadas (Frontend)
+
+
+Se automatizaron los siguientes flujos para usuarios registrados y no registrados, siguiendo un enfoque de pruebas BDD:
+
+1. **Consulta de productos**: Un usuario registrado puede acceder y visualizar el listado de productos.
+2. **Registro de producto**: Creación de un nuevo producto (ej. *iPhone 16*) con campos complementarios.
+3. **Edición de producto**: Modificación del nombre del producto de *iPhone 16* a *iPhone 16 Pro Max*.
+4. **Eliminación de producto**: Eliminación del producto creado.
+5. **Acceso denegado a usuarios no registrados**: Validación de control de acceso.
+
+
+---
+
+## 🧪 Pruebas E2E Backend (API REST)
+
+Las pruebas de backend se realizaron usando Supertest + Jest para los siguientes endpoints documentados en [Postman](https://documenter.getpostman.com/view/1142428/2sB34ijzCx):
+
+- `POST /api/login`: Login con credenciales válidas (`tester@adl.com / testerEngineer`)
+- `GET /api/clients`: Consulta de clientes (requiere token JWT)
+- `POST /api/clients`: Registro de nuevo cliente
+- `PUT /api/clients`: Actualización de un cliente existente
+- `DELETE /api/clients`: Eliminación del cliente creado anteriormente
+
+Todas las rutas, salvo `/api/login`, requieren autenticación con token válido.
+
+---
+
+## 📲 Pruebas en Aplicaciones Móviles (Opcional)
+
+Adicionalmente, se incluyeron pruebas exploratorias en apps móviles donde se trabajaron:
+
+- Uso de selectores móviles
+- Validación de elementos visibles/interactivos
+- Simulación de flujo de usuario
+
+---
+
+## 🔗 Repositorios del Proyecto
+
+A continuación, se listan los tres repositorios correspondientes a las diferentes capas del proyecto:
+
+- 📁 **Repositorio Frontend (Playwright + BDD)**: [agregar link aquí]
+- 📁 **Repositorio Backend (Supertest + Jest)**: [agregar link aquí]
+- 📁 **Repositorio Mobile (Opcional)**: [agregar link aquí]
+
+---
+
+## 🌐 Reportes de Prueba (GitHub Pages)
+
+Los reportes HTML generados desde Playwright son publicados automáticamente mediante GitHub Actions en GitHub Pages. Revisa el reporte de ejecución más reciente aquí:
+
+🔗 [Ver reporte de pruebas frontend](https://<tu-usuario>.github.io/<repositorio>/)
+
+> *La URL se genera automáticamente como artefacto al finalizar la ejecución de CI/CD.*
+
+---
+
+## 🚀 Instrucciones para Ejecutar Localmente
+
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/tu-usuario/tu-repo.git
