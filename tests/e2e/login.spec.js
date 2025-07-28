@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { LoginPage } from './pages/loginPage';
-import usuarios from './fixtures/usuarios.json';
+import { LoginPage } from '../pages/loginPage';
+import usuarios from '../fixtures/usuarios.json';
 
 let login;
 

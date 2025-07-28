@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { LoginPage } from './pages/loginPage';
-import { DashboardPage } from './pages/dashboardPage';
-import usuarios from './fixtures/usuarios.json';
-import dashboardData from './fixtures/dashboard.json';
+import { LoginPage } from '../pages/loginPage';
+import { DashboardPage } from '../pages/dashboardPage';
+import usuarios from '../fixtures/usuarios.json';
+import dashboardData from '../fixtures/dashboard.json';
 
 let dashboard;
 

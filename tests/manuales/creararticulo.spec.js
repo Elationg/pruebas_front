@@ -1,11 +1,11 @@
-import { LoginPage } from './pages/loginPage';
+import { LoginPage } from '../pages/loginPage';
 import { test, expect } from '@playwright/test';
-import { CrearArticuloPage } from './pages/crearArticuloPage';
-import { ArticulosPage } from './pages/articulosPage';
-import { DetalleArticuloPage } from './pages/detalleArticuloPage';
-import { EditarArticuloPage } from './pages/editarArticuloPage';
-import articulos from './fixtures/articulos.json';
-import usuarios from './fixtures/usuarios.json';
+import { CrearArticuloPage } from '../pages/crearArticuloPage';
+import { ArticulosPage } from '../pages/articulosPage';
+import { DetalleArticuloPage } from '../pages/detalleArticuloPage';
+import { EditarArticuloPage } from '../pages/editarArticuloPage';
+import articulos from '../fixtures/articulos.json';
+import usuarios from '../fixtures/usuarios.json';
 
 test.describe('Pruebas de creación, edición y eliminación de artículos', () => {
   let pagina;

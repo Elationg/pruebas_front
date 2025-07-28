@@ -1,12 +1,12 @@
-import articulos from './fixtures/articulos.json';
-import usuarios from './fixtures/usuarios.json';
+import articulos from '../fixtures/articulos.json';
+import usuarios from '../fixtures/usuarios.json';
 import { test, expect } from '@playwright/test';
-import { DashboardPage } from './pages/dashboardPage';
-import { CrearArticuloPage } from './pages/crearArticuloPage';
-import { ArticulosPage } from './pages/articulosPage';
-import { DetalleArticuloPage } from './pages/detalleArticuloPage';
-import { EditarArticuloPage } from './pages/editarArticuloPage';
-import { LoginPage } from './pages/loginPage';
+import { DashboardPage } from '../pages/dashboardPage';
+import { CrearArticuloPage } from '../pages/crearArticuloPage';
+import { ArticulosPage } from '../pages/articulosPage';
+import { DetalleArticuloPage } from '../pages/detalleArticuloPage';
+import { EditarArticuloPage } from '../pages/editarArticuloPage';
+import { LoginPage } from '../pages/loginPage';
 
 let dashboardPage;
 let crearArticuloPage;
