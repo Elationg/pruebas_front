@@ -9,12 +9,11 @@ Este repositorio contiene el conjunto de pruebas automatizadas desarrolladas par
 - **HTML Reporter de Playwright**: Utilizado para generar reportes visuales de las ejecuciones de prueba.
 - **GitHub Actions**: Para la ejecución automatizada de pruebas en cada push mediante CI/CD.
 - **GitHub Pages**: Para publicar los reportes HTML generados desde las pruebas.
-- **Supertest + Jest**: Para pruebas del backend, enfocadas en la validación de endpoints protegidos y autenticados.
+- **Postman + Newman**: Para pruebas del backend, enfocadas en la validación de endpoints protegidos y autenticados.
 
 ---
 
-## Historias de Usuario Probadas (Frontend)
-
+## Historias de Usuario Probadas (Frontend - e2e)
 
 Se automatizaron los siguientes flujos para usuarios registrados y no registrados, siguiendo un enfoque de pruebas BDD:
 
@@ -24,12 +23,11 @@ Se automatizaron los siguientes flujos para usuarios registrados y no registrado
 4. **Eliminación de producto**: Eliminación del producto creado.
 5. **Acceso denegado a usuarios no registrados**: Validación de control de acceso.
 
-
 ---
 
-## 🧪 Pruebas E2E Backend (API REST)
+## Pruebas E2E Backend (API REST)
 
-Las pruebas de backend se realizaron usando Supertest + Jest para los siguientes endpoints documentados en [Postman](https://documenter.getpostman.com/view/1142428/2sB34ijzCx):
+Las pruebas de backend se realizaron usando Postman + Newman para los siguientes endpoints documentados en [Postman]: https://api-tester-adl.leonardojose.dev
 
 - `POST /api/login`: Login con credenciales válidas (`tester@adl.com / testerEngineer`)
 - `GET /api/clients`: Consulta de clientes (requiere token JWT)
@@ -38,10 +36,11 @@ Las pruebas de backend se realizaron usando Supertest + Jest para los siguientes
 - `DELETE /api/clients`: Eliminación del cliente creado anteriormente
 
 Todas las rutas, salvo `/api/login`, requieren autenticación con token válido.
+Mas detalle en documentación: https://documenter.getpostman.com/view/1142428/2sB34ijzCx
 
 ---
 
-## 📲 Pruebas en Aplicaciones Móviles (Opcional)
+## Pruebas en Aplicaciones Móviles - ToDoAPP (Jest + wendriverio)
 
 Adicionalmente, se incluyeron pruebas exploratorias en apps móviles donde se trabajaron:
 
@@ -51,28 +50,23 @@ Adicionalmente, se incluyeron pruebas exploratorias en apps móviles donde se tr
 
 ---
 
-## 🔗 Repositorios del Proyecto
+## Repositorios del Proyecto
 
 A continuación, se listan los tres repositorios correspondientes a las diferentes capas del proyecto:
 
-- 📁 **Repositorio Frontend (Playwright + BDD)**: [agregar link aquí]
-- 📁 **Repositorio Backend (Supertest + Jest)**: [agregar link aquí]
+- 📁 **Repositorio Frontend (Playwright + BDD)**: https://github.com/Elationg/pruebas_front
+- 📁 **Repositorio Backend (Postman + Newman)**: https://github.com/Elationg/pruebas_backAPI
 - 📁 **Repositorio Mobile (Opcional)**: [agregar link aquí]
 
 ---
 
-## 🌐 Reportes de Prueba (GitHub Pages)
+## Reportes de Prueba (GitHub Pages)
 
 Los reportes HTML generados desde Playwright son publicados automáticamente mediante GitHub Actions en GitHub Pages. Revisa el reporte de ejecución más reciente aquí:
 
-🔗 [Ver reporte de pruebas frontend](https://<tu-usuario>.github.io/<repositorio>/)
+[Ver reporte de pruebas frontend] https://elationg.github.io/pruebas_front/
 
 > *La URL se genera automáticamente como artefacto al finalizar la ejecución de CI/CD.*
 
 ---
 
-## 🚀 Instrucciones para Ejecutar Localmente
-
-1. Clonar el repositorio:
-   ```bash
-   git clone https://github.com/tu-usuario/tu-repo.git
