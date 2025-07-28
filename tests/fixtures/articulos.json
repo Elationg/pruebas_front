@@ -189,24 +189,3 @@
     "unidad": "Unidad",
     "error": "éxito"
   },
-  "duplicadoSku": {
-    "exito": false,
-    "sku": "COD-A7-2025",
-    "descripcion": "Iphone 16 Plus",
-    "stock": 5,
-    "costo": 400,
-    "precio": 800,
-    "unidad": "Caja",
-    "error": "Ya existe un artículo con este SKU."
-  },
-  "duplicadoDescripcion": {
-    "exito": false,
-    "sku": "COD-PB-2026",
-    "descripcion": "Iphone 16",
-    "stock": 8,
-    "costo": 450,
-    "precio": 850,
-    "unidad": "Kg",
-    "error": "Ya existe un artículo con esta descripción."
-  }
-}
