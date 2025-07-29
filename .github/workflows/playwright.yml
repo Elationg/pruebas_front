@@ -18,7 +18,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
-    - name: Ejecutar pruebas de e2e
+    - name: Ejecutar pruebas
       run: npx playwright test
       continue-on-error: true
 
@@ -37,6 +37,14 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+
+    - name: Publicar en GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./playwright-report
+
+
 
     - name: Mostrar URL de GitHub Pages
       run: |
