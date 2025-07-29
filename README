@@ -56,7 +56,7 @@ A continuación, se listan los tres repositorios correspondientes a las diferent
 
 - 📁 **Repositorio Frontend (Playwright + BDD)**: https://github.com/Elationg/pruebas_front
 - 📁 **Repositorio Backend (Postman + Newman)**: https://github.com/Elationg/pruebas_backAPI
-- 📁 **Repositorio Mobile (Opcional)**: [agregar link aquí]
+- 📁 **Repositorio Mobile (Opcional)**: https://github.com/Elationg/pruebas_todoAPP
 
 ---
 
@@ -64,7 +64,9 @@ A continuación, se listan los tres repositorios correspondientes a las diferent
 
 Los reportes HTML generados desde Playwright son publicados automáticamente mediante GitHub Actions en GitHub Pages. Revisa el reporte de ejecución más reciente aquí:
 
-[Ver reporte de pruebas frontend] https://elationg.github.io/pruebas_front/
+[Ver reporte de pruebas Frontend] https://elationg.github.io/pruebas_front/
+[Ver reporte de pruebas Backend] https://elationg.github.io/pruebas_backAPI/
+[Ver reporte de pruebas APP] https://elationg.github.io/pruebas_todoAPP/
 
 > *La URL se genera automáticamente como artefacto al finalizar la ejecución de CI/CD.*
 
